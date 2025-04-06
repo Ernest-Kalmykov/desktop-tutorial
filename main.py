@@ -69,6 +69,7 @@ class MainWindow:
 
                 self.game_window.fill(self.game.map_color)
                 self.game.render_snake(self.game_window)
+                self.game.render_snake(self.game_window)
                 self.game.render_mouse(self.game_window)
                 self.game.show_score(self.game_window, self.game.SCORE_COLOR, 'consolas', self.game.SIZE_COLOR)
 
@@ -95,59 +96,3 @@ class MainWindow:
 if __name__ == "__main__":
     game = MainWindow()
     game.run()
-
-# if __name__ == "main":
-#     while GAME_RUNNING:
-#         main_window = MainWindow()
-#         main_window.start_game()
-#
-#         fps = pygame.time.Clock()  # FPS
-#
-#         for event in pygame.event.get():
-#             if event.type == pygame.KEYDOWN:
-#                 if event.key == pygame.K_UP:
-#                     change_to = 'UP'
-#                 if event.key == pygame.K_DOWN:
-#                     change_to = 'DOWN'
-#                 if event.key == pygame.K_LEFT:
-#                     change_to = 'LEFT'
-#                 if event.key == pygame.K_RIGHT:
-#                     change_to = 'RIGHT'
-#             if main_window.change_snake_direction() == 'UP' and main_window.change_snake_direction() != 'DOWN':  # Запрещаю поворачивать в противоположную сторону
-#                 direction = 'UP'
-#             if main_window.change_snake_direction() == 'DOWN' and main_window.change_snake_direction() != 'UP':
-#                 direction = 'DOWN'
-#             if main_window.change_snake_direction() == 'LEFT' and main_window.change_snake_direction() != 'RIGHT':
-#                 direction = 'LEFT'
-#             if main_window.change_snake_direction() == 'RIGHT' and main_window.change_snake_direction() != 'LEFT':
-#                 direction = 'RIGHT'
-#             if main_window.change_snake_direction() == 'UP':
-#                 GameLogics().snake_position[1] -= 10
-#             if main_window.change_snake_direction() == 'DOWN':
-#                 GameLogics().snake_position[1] += 10
-#             if main_window.change_snake_direction() == 'LEFT':
-#                 GameLogics().snake_position[0] -= 10
-#             if main_window.change_snake_direction() == 'RIGHT':
-#                 GameLogics().snake_position[0] += 10
-#
-#             if event.type == pygame.QUIT:
-#                 GAME_RUNNING = False
-#
-#             if not GameLogics().fruit_spawn:
-#                 mouse_position = [random.randrange(1, (main_window.WINDOW_X // 10)) * 10,
-#                                   random.randrange(1, (main_window.WINDOW_Y // 10)) * 10]
-#             fruit_spawn = True
-#
-#         GameLogics().show_score(GameLogics().SCORE_COLOR, 'consolas', GameLogics.SIZE_COLOR)
-#         pygame.display.update()
-#         fps.tick(GameLogics().snake_speed)
-#
-#     else:
-#         quit()
-
-
-# def change_snake_direction(self):
-#     change_to = GameLogics().direction
-#
-# def clear_screen(self):
-#     self.init_window().fill(GameLogics().map_color)
